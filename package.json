@@ -19,9 +19,14 @@
     "bundle-profile:analyze": "npm run build:bundle-profile && webpack-bundle-analyzer ./stats.json",
     "clean": "rimraf dist",
     "storybook": "start-storybook -p 6006",
-    "build:storybook": "build-storybook"
+    "build:storybook": "build-storybook",
+    "i18n": "NODE_ENV=development babel -f .babelrc 'src/**/*.{js,jsx,ts,tsx}'"
   },
   "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/preset-react": "^7.9.4",
+    "@babel/preset-typescript": "^7.9.0",
     "@storybook/addon-actions": "^5.3.14",
     "@storybook/addon-info": "^5.3.14",
     "@storybook/addon-links": "^5.3.14",
@@ -38,6 +43,7 @@
     "@types/webpack": "^4.41.6",
     "@typescript-eslint/eslint-plugin": "^2.21.0",
     "@typescript-eslint/parser": "^2.21.0",
+    "babel-plugin-i18next-extract": "^0.7.2",
     "css-loader": "^3.4.2",
     "enzyme": "^3.7.0",
     "enzyme-adapter-react-16": "^1.15.1",
@@ -74,11 +80,16 @@
     "webpack-merge": "^4.1.4"
   },
   "dependencies": {
-    "@patternfly/react-core": "^4.0.3",
-    "@patternfly/react-icons": "^3.15.3",
-    "@patternfly/react-styles": "^3.7.4",
+    "@formatjs/intl-relativetimeformat": "^4.5.12",
+    "@patternfly/react-core": "^3.153.3",
+    "@patternfly/react-icons": "^3.15.15",
+    "@patternfly/react-styles": "^3.7.12",
     "express": "^4.13.4",
+    "i18next": "^19.4.2",
+    "i18next-browser-languagedetector": "^4.0.2",
+    "i18next-http-backend": "^1.0.3",
     "react-axe": "^3.4.1",
+    "react-i18next": "^11.3.4",
     "react-router-dom": "^5.0.1",
     "react-router-last-location": "^2.0.1"
   }
